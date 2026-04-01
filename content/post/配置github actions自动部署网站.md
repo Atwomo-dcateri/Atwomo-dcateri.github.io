@@ -6,7 +6,9 @@ title = '基于hugo配置github Actions自动部署网站'
 
 # 配置github Actions自动部署网站
 
+
 ## 分本地和远程两个部分
+
 
 ### 整体的技术架构
 
@@ -23,40 +25,42 @@ title = '基于hugo配置github Actions自动部署网站'
 
 
 windos 环境下使用powershell安装hugo
----
+```
 winget inatall Hugo.hugo.Extended
----
+```
+
 验证版本
----
+```
 hugo version
+```
 ![alt text](/images/image.png)
----
+
 
 安装git
 
 有多种方式，推荐使用winget安装
----
+```
 winget install Git.git
----
+```
 验证版本
----
+```
 git --version
----
+```
 ![alt text](/images/image-1.png)
 不需要魔法上网
 
 如果上述方式你不安装成功，也可以到中文官方网址下载最新版
----
+```
 https://git-scm.cn/install/windows
----
+```
 
 
 
 2. 创建hugo项目
----
+```
 hugo new site git-blog
 cd git-blog
----
+```
 3. 配置hugo项目
 进入新创建的项目，找到hugo.toml，配置基本信息
 ![alt text](/images/image-2.png)
@@ -198,4 +202,22 @@ git push -u origin main# 上传本地分支
 ```
 
 2. 查看github上的自动部署情况
+访问github项目地址
 
+等待部署，显示黄色
+![alt text](image-20.png)
+部署成功
+![alt text](/images/image-21.png)
+可以点击主页Actions，查看详细的部署情况
+![alt text](/images/image-22.png)
+
+点击Deploy Hugo site to GitHub Pages，查看每一次的提交部署情况，查看成功部署记录和失败出错的地方
+![alt text](/images/image-23.png)
+![alt text](/images/image-24.png)
+
+## 总结
+
+1. 不用自己买服务器，买域名，配置服务器，搭建网站麻烦，而且不用担心，安全和带宽的问题，还可以开通评论，有评论审批是比较麻烦的。
+2. 配置的是静态网站，没有实现太复杂的交互逻辑，之后可以改变一下
+3. 只用写markdown文件，具体的交互，数据管理，外观，都可以通过简单的配置实现，不用自己一步一步的实现。对新人友好。同时复杂的交互逻辑也可以写，正反都是html/js/css那套逻辑，够灵活。
+4. 作为技术blog够用了

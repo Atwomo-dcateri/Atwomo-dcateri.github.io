@@ -118,9 +118,16 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>配置github Actions自动部署网站 分本地和远程两个部分 整体的技术架构 hugo &#43; github pages &#43; github actions hugo: 生成静态网站,直接在本地md文件编辑网站内容，使用hugo生成静态网页内容,不用配置任何其他内容 github pages: 托管网站,将生成的静态网页内容托管到github pages上，用户可以通过访问github pages的url来查看网站 github actions:自动部署网站:当本地代码有变化时，自动触发github actions，部署网站到github pages 本地配置 安装hugo windos 环境下使用powershell安装hugo winget inatall Hugo.hugo.Extended 验证版本 hugo version 安装git
-有多种方式，推荐使用winget安装 winget install Git.git 验证版本 git –version 不需要魔法上网
-如果上述方式你不安装成功，也可以到中文官方网址下载最新版 https://git-scm.cn/install/windows 创建hugo项目 hugo new site git-blog cd git-blog 配置hugo项目 进入新创建的项目，找到hugo.toml，配置基本信息 配置如下: baseURL = &#34;https://你的用户名.github.io/&#34; # 后面会提及，“你的用户名.github.io”是github pages托管的项目名称，用户名为git账户名称 languageCode = &#34;zh-cn&#34; title = &#34;我的博客&#34; # 网站名 theme = &#34;PaperMod&#34; # 如果前面选择了安装theme，可以填写 4.构建项目 终端执行hugo，构建静态网页
+    <p>配置github Actions自动部署网站 分本地和远程两个部分 整体的技术架构 hugo &#43; github pages &#43; github actions
+hugo: 生成静态网站,直接在本地md文件编辑网站内容，使用hugo生成静态网页内容,不用配置任何其他内容 github pages: 托管网站,将生成的静态网页内容托管到github pages上，用户可以通过访问github pages的url来查看网站 github actions:自动部署网站:当本地代码有变化时，自动触发github actions，部署网站到github pages
+本地配置 安装hugo windos 环境下使用powershell安装hugo
+winget inatall Hugo.hugo.Extended 验证版本
+hugo version 安装git
+有多种方式，推荐使用winget安装
+winget install Git.git 验证版本
+git --version 不需要魔法上网
+如果上述方式你不安装成功，也可以到中文官方网址下载最新版
+https://git-scm.cn/install/windows 创建hugo项目 hugo new site git-blog cd git-blog 配置hugo项目 进入新创建的项目，找到hugo.toml，配置基本信息 配置如下: baseURL = &#34;https://你的用户名.github.io/&#34; # 后面会提及，“你的用户名.github.io”是github pages托管的项目名称，用户名为git账户名称 languageCode = &#34;zh-cn&#34; title = &#34;我的博客&#34; # 网站名 theme = &#34;PaperMod&#34; # 如果前面选择了安装theme，可以填写 4.构建项目 终端执行hugo，构建静态网页
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-04-01 11:11:56 +0800 CST'>April 1, 2026</span></footer>
