@@ -13,13 +13,13 @@ jobs:
 
     steps: 
       - name: Checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0
           
       - name: Setup hugo
-      - uses: peaceiris/actions-hugo@v3
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
@@ -28,18 +28,18 @@ jobs:
         run: hugo --minify
       
       - name: Upload artifact
-      - uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
-      deploy: 
-        environment:
-          name: github-pages
-          url: ${{ steps.deployment.outputs.pages_url}}
-        run-on: ubuntu-latest
-        needs: build
-      
-        steps:
-          - name: Deploy to Github Pages
-            id: deployment
-            uses: actions/deploy-pages@v4
+  deploy: 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.pages_url}}
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
